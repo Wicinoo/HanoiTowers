@@ -39,20 +39,16 @@ public class StoneControl : MonoBehaviour
 
 	public void MoveLeft()
 	{
-		Debug.Log("current pole"+currentPole.ToString());
-		
 		if (currentPole <= 0) return;
 		currentPole--;
-		//UpdatePosition();
+		UpdatePosition();
 	}
 
 	public void MoveRight()
 	{
-		Debug.Log("current pole"+currentPole.ToString());		
-		
 		if (currentPole >= 2) return;
 		currentPole++;
-		//UpdatePosition();
+		UpdatePosition();
 	}
 
 	private void UpdatePosition()
