@@ -7,7 +7,7 @@ public class StoneControl : MonoBehaviour
 	public bool IsUp {get{return isUp;}}
 
 	private GameController gc;
-	private float speed = 0.1f;
+	private float speed = 0.2f;
 	private bool isUp = false;
 	private bool isMovingVertically = false;
 	private int currentPole=1;
