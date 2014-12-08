@@ -21,15 +21,31 @@ public class GameController : MonoBehaviour
 		if (Input.GetKeyUp(KeyCode.S)) selectedStone.Drop();
 		if (Input.GetKeyUp(KeyCode.D)) selectedStone.MoveRight();
 		if (Input.GetKeyUp(KeyCode.A)) selectedStone.MoveLeft();	
+
+		selectedStone.DebugPrint();
 	}
 
 	public void SelectStone(StoneControl newSelection)
 	{
-		selectedStone = newSelection;
+		if (selectedStone == null)
+		{
+			selectedStone = newSelection;
+			return;
+		}
+
+		if (!selectedStone.IsUp)
+		{
+			selectedStone = newSelection;
+		}
 	}
 
 	public float GetPolePositionX(int pole)
 	{
 		return PolePositions[pole].x;
+	}
+
+	public float GetPolePositionY(int pole)
+	{
+		return 0f;
 	}
 }
