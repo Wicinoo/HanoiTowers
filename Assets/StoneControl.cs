@@ -5,6 +5,7 @@ public class StoneControl : MonoBehaviour
 {
 	public int Size;
 	public bool IsUp {get{return isUp;}}
+	public int CurrentPole {get{return currentPole;}}
 
 	private GameController gc;
 	private float speed = 0.2f;
@@ -44,11 +45,12 @@ public class StoneControl : MonoBehaviour
 		targetY = upY;
 	}
 
-	public void Drop()
+	public void Drop(float toHeight)
 	{
 		isUp = false;
 		isMovingVertically = true;
-		targetY = gc.GetPolePositionY(currentPole);
+		//targetY = gc.GetPolePositionY(currentPole);
+		targetY = toHeight;
 	}
 
 	public void MoveLeft()
