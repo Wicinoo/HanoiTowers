@@ -104,10 +104,4 @@ public class StoneControl : MonoBehaviour
 		if (targetY < this.transform.position.y) return Vector3.down;
 		return Vector3.zero;
 	}
-
-	public void DebugPrint()
-	{
-		Debug.Log(string.Format("{5}|Pole{0}, Up{6} currentX={1}, targetX={2}, currentY={3}, targetY={4}",
-		                        currentPole, this.transform.position.x, targetX, this.transform.position.y, targetY, this.transform.name, isUp));
-	}
 }

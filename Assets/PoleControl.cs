@@ -73,4 +73,9 @@ public class PoleControl : MonoBehaviour
 	{
 		return GetTopStone().Size;
 	}
+
+	public float GetPositionX()
+	{
+		return this.transform.position.x;
+	}
 }

@@ -4,8 +4,7 @@ using System.Collections;
 public class GameController : MonoBehaviour 
 {
 	private StoneControl selectedStone;
-
-	public Vector3[] PolePositions; //where poles are positioned
+	
 	public PoleControl[] Poles;
 	public StoneControl[] Stones;
 
@@ -23,10 +22,8 @@ public class GameController : MonoBehaviour
 
 		if (Input.GetKeyUp(KeyCode.W)) pickUp();
 		if (Input.GetKeyUp(KeyCode.S)) drop();
-		if (Input.GetKeyUp(KeyCode.D)) selectedStone.MoveRight();
-		if (Input.GetKeyUp(KeyCode.A)) selectedStone.MoveLeft();	
-
-		selectedStone.DebugPrint();
+		if (Input.GetKeyUp(KeyCode.D)) right();
+		if (Input.GetKeyUp(KeyCode.A)) left();
 	}
 
 	#region MoveControls
@@ -56,6 +53,16 @@ public class GameController : MonoBehaviour
 		}
 	}
 
+	private void right()
+	{
+		selectedStone.MoveRight();
+	}
+
+	private void left()
+	{
+		selectedStone.MoveLeft();
+	}
+
 	#endregion
 
 	public void SelectStone(StoneControl newSelection)
@@ -74,11 +81,6 @@ public class GameController : MonoBehaviour
 
 	public float GetPolePositionX(int pole)
 	{
-		return PolePositions[pole].x;
-	}
-
-	public float GetPolePositionY(int pole)
-	{
-		return 0f;
+		return Poles[pole].GetPositionX();
 	}
 }
