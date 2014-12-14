@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour
 	{
 		foreach (var stone in Stones)
 		{
-			Poles[1].AddStone(stone);
+			Poles[1].AddStone(stone); //stones are at middle pole after game starts, we need to let the pole know
 		}
 	}
 
